@@ -22,7 +22,6 @@ dist = sqrt((xj(length(xj))-x0^2) + (yj(length(yj))-y0^2) + (zj(length(zj))-z0^2
 fprintf("The distance between the starting and end point is: %0.4f units\n", dist);
 
 
-
 %%q7 comparison
 
 x0_q7 = 1;
