@@ -41,9 +41,9 @@ for i = 1:num_steps
     %step 4
     k4 = lorenz_func(t+delta_t,x+k3(1)*delta_t, y+k3(2)*delta_t, 3+k3(3)*delta_t);
 
-    x = x + (delta_t/6) * (k1(1) + 2*k2(1) + 2*k3(1) + k4(1));
-    y = y + (delta_t/6) * (k1(2) + 2*k2(2) + 2*k3(2) + k4(2));
-    z = z + (delta_t/6) * (k1(3) + 2*k2(3) + 2*k3(3) + k4(3));
+    x = x + (delta_t/6) * (k1(2) + 2*k2(2) + 2*k3(2) + k4(2));
+    y = y + (delta_t/6) * (k1(3) + 2*k2(3) + 2*k3(3) + k4(3));
+    z = z + (delta_t/6) * (k1(4) + 2*k2(4) + 2*k3(4) + k4(4));
     
     RK4_sol(i+1, :) = [(i * delta_t), x, y, z];
 end
