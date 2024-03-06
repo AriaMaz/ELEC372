@@ -38,7 +38,6 @@ xlabel('time(s)');
 ylabel('z(t)');
 grid on;
 
-
 %Question 2 strange attractors y-x, z-x
 figure;
 plot(x, y);
