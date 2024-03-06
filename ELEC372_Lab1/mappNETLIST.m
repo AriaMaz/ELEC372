@@ -42,6 +42,7 @@ function [A, b] = mappNETLIST(filename)
         
         % Update the matrices A and b based on the component type
         if type == 'R'
+
             % For resistors, update A matrix
             G = 1 / value; % Conductance is the inverse of resistance
             if n1 ~= 0
@@ -55,6 +56,7 @@ function [A, b] = mappNETLIST(filename)
                 A(n2, n1) = A(n2, n1) - G;
             end
         elseif type == 'I'
+            
             % For current sources, update b vector
             if n1 ~= 0
                 b(n1) = b(n1) - value; % Current entering node n1, assumed negative
