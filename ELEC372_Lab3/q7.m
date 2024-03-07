@@ -44,3 +44,17 @@ fprintf("The distance between the starting and end point for q7 is: %0.4f units\
 
 sensitivity = (dist_q7/dist)*100;
 fprintf("There is a %0.2f%% difference between the values in q7 and q6.\n", sensitivity);
+
+%plotting
+figure;
+plot3(xj, yj, zj);
+hold on;
+plot3(xj_q7, yj_q7, zj_q7, 'r');
+%final point
+hold off;
+title('Three dimensional trajectory plot comparsion between original plot & changing values slightly.');
+xlabel('x(t)');
+ylabel('y(t)');
+zlabel('z(t)');
+legend('Original', 'Adjusted', 'Location', 'southoutside', 'Orientation', 'horizontal');
+grid on;
