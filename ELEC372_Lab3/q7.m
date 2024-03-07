@@ -17,9 +17,9 @@ yj = eulerPlot_sol(:, 3);
 zj = eulerPlot_sol(:, 4);
 
 
-%start to end point distance
-dist = sqrt((xj(length(xj))-x0^2) + (yj(length(yj))-y0^2) + (zj(length(zj))-z0^2));
-fprintf("The distance between the starting and end point is: %0.4f units\n", dist);
+%start to end point distance for q6
+dist = sqrt(((xj(length(xj))-x0)^2) + ((yj(length(yj))-y0)^2) + ((zj(length(zj))-z0)^2));
+fprintf("The distance between the starting and end point for q6 is: %0.4f units\n", dist);
 
 
 %%q7 comparison
@@ -39,8 +39,8 @@ xj_q7 = eulerPlot_sol(:, 2);
 yj_q7 = eulerPlot_sol(:, 3);
 zj_q7 = eulerPlot_sol(:, 4);
 
-dist_q7 = sqrt(((xj_q7(length(xj_q7))-x0_q7)^2) + (yj_q7(length(yj_q7))-y0_q7^2) + (zj_q7(length(zj_q7))-z0_q7^2));
-fprintf("The distance between the starting and end point is for q7: %0.4f units\n", dist_q7); 
+dist_q7 = sqrt(((xj_q7(length(xj_q7))-x0_q7)^2) + ((yj_q7(length(yj_q7))-y0_q7)^2) + ((zj_q7(length(zj_q7))-z0_q7)^2));
+fprintf("The distance between the starting and end point for q7 is: %0.4f units\n", dist_q7); 
 
 sensitivity = (dist_q7/dist)*100;
 fprintf("There is a %0.2f%% difference between the values in q7 and q6.\n", sensitivity);

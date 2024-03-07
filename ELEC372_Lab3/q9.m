@@ -1,3 +1,4 @@
+close all;
 t_max = 100;
 delta_t = 0.001;
 x0 = 1;
@@ -21,7 +22,7 @@ z = z0;
 
 lorenz_func = @(x, y, z)[y;
                         z;
-                        z-x-1e-9*(exp(y/0.026)-1)];
+                        -z-x-1e-9*(exp(y/0.026)-1)];
 
 
 
@@ -53,9 +54,9 @@ for i = 1:num_steps
     y = y + (delta_t/6) * (k1(2) + 2*k2(2) + 2*k3(2) + k4(2));
     z = z + (delta_t/6) * (k1(3) + 2*k2(3) + 2*k3(3) + k4(3));
     
-    x_plot(:, 1) = x;
-    y_plot(:, 1) = y;
-    z_plot(:, 1) = z;
+    x_plot(i, 1) = x;
+    y_plot(i, 1) = y;
+    z_plot(i, 1) = z;
 end
 
 figure;
