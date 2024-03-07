@@ -22,16 +22,24 @@ zj = eulerPlot_sol(:, 4);
 
 figure;
 plot(time, xj, 'r');
-hold on;
-plot(time, yj, 'g');
-plot(time, zj, 'm');
-hold off;
 title('Lorenz system of equations solution for xj(t) using Eulers method.');
 xlabel('time(s)');
 ylabel('xj(t)');
-legend('x', 'y', 'z')
 grid on;
 
+figure;
+plot(time, yj, 'r');
+title('Lorenz system of equations solution for yj(t) using Eulers method.');
+xlabel('time(s)');
+ylabel('yj(t)');
+grid on;
+
+figure;
+plot(time, zj, 'r');
+title('Lorenz system of equations solution for zj(t) using Eulers method.');
+xlabel('time(s)');
+ylabel('zj(t)');
+grid on;
 
 
 %Question 5 strange attractors y-x, z-x
