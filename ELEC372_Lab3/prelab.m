@@ -18,25 +18,17 @@ z = prelab_sol(:, 4);
 
 %question 1 plots
 figure;
-plot(t, x);
-title('Lorenz system of equations solution for x(t)');
+plot(t, x, 'b');
+hold on;
+plot(t,y, 'r');
+plot(t, z, 'm');
+hold off;
+title('Lorenz system of equations solutions');
 xlabel('time(s)');
 ylabel('x(t)');
+legend('x(t)', 'y(t)', 'z(t)');
 grid on;
 
-figure;
-plot(t,y);
-title('Lorenz system of equations solution for y(t)');
-xlabel('time(s)');
-ylabel('y(t)');
-grid on;
-
-figure;
-plot(t, z);
-title('Lorenz system of equations solution for z(t)');
-xlabel('time(s)');
-ylabel('z(t)');
-grid on;
 
 %Question 2 strange attractors y-x, z-x
 figure;
