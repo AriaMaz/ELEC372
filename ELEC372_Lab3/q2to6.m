@@ -21,25 +21,18 @@ zj = eulerPlot_sol(:, 4);
 %plots
 
 figure;
-plot(time, xj);
+plot(time, xj, 'r');
+hold on;
+plot(time, yj, 'g');
+plot(time, zj, 'm');
+hold off;
 title('Lorenz system of equations solution for xj(t) using Eulers method.');
 xlabel('time(s)');
 ylabel('xj(t)');
+legend('x', 'y', 'z')
 grid on;
 
-figure;
-plot(time, yj);
-title('Lorenz system of equations solution for yj(t)');
-xlabel('time(s)');
-ylabel('yj(t)');
-grid on;
 
-figure;
-plot(time, zj);
-title('Lorenz system of equations solution for zj(t)');
-xlabel('time(s)');
-ylabel('zj(t)');
-grid on;
 
 %Question 5 strange attractors y-x, z-x
 figure;
@@ -72,5 +65,5 @@ zlabel('zj(t)');
 grid on;
 
 %start to end point distance
-dist = sqrt((xj(length(xj))-x0^2) + (yj(length(yj))-y0^2) + (zj(length(zj))-z0^2));
+dist = sqrt(((xj(length(xj))-x0)^2) + ((yj(length(yj))-y0)^2) + ((zj(length(zj))-z0)^2));
 fprintf("The distance between the starting and end point is: %0.4f units\n", dist);
