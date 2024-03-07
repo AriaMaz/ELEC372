@@ -31,14 +31,16 @@ grid on;
 
     %Question 1 x(t) plot
     figure;
-    plot(t,y, 'r');
+    plot(t, x, 'r');
+    title('x(t)');
     xlabel('time(s)');
     ylabel('x(t)');
     grid on;
     
     %Question 1, y(t) plot
     figure;
-    plot(t,y, 'r');
+    plot(t, y, 'r');
+    title('y(t)');
     xlabel('time(s)');
     ylabel('y(t)');
     grid on;
@@ -46,6 +48,7 @@ grid on;
     %Question 1, z(t) plot
     figure;
     plot(t, z, 'm');
+    title('z(t)');
     xlabel('time(s)');
     ylabel('z(t)');
     grid on;
