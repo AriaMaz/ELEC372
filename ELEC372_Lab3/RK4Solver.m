@@ -9,11 +9,9 @@ lorenz_func = @(t, x, y, z)[ t;
                             x*y - beta*z];
 
 %ode solver, producing x,y,z values for the system
-
 x = x0;
 y = y0;
 z = z0;
-
 
 RK4_sol = zeros(length(time_steps), 4);
 RK4_sol(1, :) =[0, x, y , z];

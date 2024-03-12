@@ -1,6 +1,7 @@
 %prelab with ode45plotter function
 close all;
 
+%Given parameters
 t_max = 100;
 x0 = 1;
 y0 = 0.5;
@@ -9,8 +10,10 @@ sigma = 10;
 rho = 28;
 beta = 8/3;
 
+%separate ode45 function
 prelab_sol = ode45solver(t_max, x0, y0, z0, sigma, rho, beta);
 
+%output extraction
 t = prelab_sol(:, 1);
 x = prelab_sol(:, 2);
 y = prelab_sol(:, 3);
@@ -18,40 +21,40 @@ z = prelab_sol(:, 4);
 
 %Question 1, all plots
 figure;
-plot(t, x, 'b');
+plot(t, x, 'g');
 hold on;
 plot(t,y, 'r');
 plot(t, z, 'm');
 hold off;
-title('Lorenz system of equations solutions');
+title('Lorenz system of equations time plots');
 xlabel('time(s)');
-ylabel('x(t), y(t), and z(t)');
+ylabel('Function Output');
 legend('x(t)', 'y(t)', 'z(t)');
 grid on;
 
-    %Question 1 x(t) plot
-    figure;
-    plot(t, x, 'r');
-    title('x(t)');
-    xlabel('time(s)');
-    ylabel('x(t)');
-    grid on;
+%Question 1 x(t) plot
+figure;
+plot(t, x, 'r');
+title('x(t)');
+xlabel('time(s)');
+ylabel('x(t)');
+grid on;
     
-    %Question 1, y(t) plot
-    figure;
-    plot(t, y, 'r');
-    title('y(t)');
-    xlabel('time(s)');
-    ylabel('y(t)');
-    grid on;
+%Question 1, y(t) plot
+figure;
+plot(t, y, 'r');
+title('y(t)');
+xlabel('time(s)');
+ylabel('y(t)');
+grid on;
     
-    %Question 1, z(t) plot
-    figure;
-    plot(t, z, 'm');
-    title('z(t)');
-    xlabel('time(s)');
-    ylabel('z(t)');
-    grid on;
+%Question 1, z(t) plot
+figure;
+plot(t, z, 'm');
+title('z(t)');
+xlabel('time(s)');
+ylabel('z(t)');
+grid on;
 
 %Question 2, strange attractors y-x, z-x
 figure;
