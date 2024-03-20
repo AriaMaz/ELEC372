@@ -1,0 +1,5 @@
+Golden Section Search: Required 48 function evaluations for each interval.
+Bisection Search Method: Required 18 function evaluations for each interval.
+Newton-Raphson Method: Required between 4 to 5 function evaluations for each initial guess.
+
+The Newton-Raphson method utilized the fewest number of function evaluation since it is able to converge quickley when given a goof initial guess.
