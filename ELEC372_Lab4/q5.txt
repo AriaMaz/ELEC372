@@ -1,0 +1,4 @@
+Include in your report the output of fminsearch for each of the five extrema.
+
+[Research Question]: Write a small description (in words) of the algorithm employed by
+fminsearch.

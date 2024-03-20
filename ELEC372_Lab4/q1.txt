@@ -1,0 +1,1 @@
+Use analytical (first and second derivative test) to identify all the local and global maxima and minima of 𝑓(𝑥) for 𝑥 in the range −6 ≤ 𝑥 ≤ 9.
