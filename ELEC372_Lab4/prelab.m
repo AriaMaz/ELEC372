@@ -1,17 +1,16 @@
-% Define the function
+% function
 f = @(x) 2*sin(x) - x.^2/30;
 
-% Define the first derivative of the function
+% first derivative
 df = @(x) 2*cos(x) - x/15;
 
-% Plot the function over the given range
+% Plot function over range
 x = linspace(-6, 9, 1000);
 plot(x, f(x))
 hold on
 
-% Use fzero to find zeros of the first derivative within the given range
-% We provide initial guesses based on the plotted function
-initialGuesses = [-5, 0, 5, 8];
+% Use initial guess based on plot and fzero to find zeros of first derivative 
+initialGuesses = [-5, 0, 2, 5, 8];
 zerosDf = zeros(1, length(initialGuesses));
 
 for i = 1:length(initialGuesses)
