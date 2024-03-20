@@ -25,20 +25,59 @@ x_ode45 = ode45_sol(:, 2);
 y_ode45 = ode45_sol(:, 3);
 z_ode45 = ode45_sol(:, 4);
 
+time_RK4 = RK4_sol(:, 1);
 x_RK4 = RK4_sol(:, 2);
 y_RK4 = RK4_sol(:, 3);
 z_RK4 = RK4_sol(:, 4);
 
 
 %start to end point distance - ode45
-dist_ode45 = sqrt((x_ode45(length(x_ode45))-x0^2) + (y_ode45(length(y_ode45))-y0^2) + (z_ode45(length(z_ode45))-z0^2));
+dist_ode45 = sqrt(((x_ode45(length(x_ode45))-x0)^2) + ((y_ode45(length(y_ode45))-y0)^2) + ((z_ode45(length(z_ode45))-z0)^2));
 fprintf("The ode45 distance between the starting and end point is: %0.4f units\n", dist_ode45);
 %start to end point distance - RK4
-dist_RK4 = sqrt((x_RK4(length(x_RK4))-x0^2) + (y_RK4(length(y_RK4))-y0^2) + (z_RK4(length(z_RK4))-z0^2));
-fprintf("The ode45 distance between the starting and end point is: %0.4f units\n", dist_RK4);
+dist_RK4 = sqrt(((x_RK4(length(x_RK4))-x0)^2) + ((y_RK4(length(y_RK4))-y0)^2) + ((z_RK4(length(z_RK4))-z0)^2));
+fprintf("The RK4 distance between the starting and end point is: %0.4f units\n", dist_RK4);
 % percentage difference between RK4 and ode45
 sensitivity = (1-(dist_RK4/dist_ode45))*100;
 fprintf("There is a %0.2f%% difference between the start to end point distances in RK4 method vs ode45 method.\n", sensitivity);
+
+
+%plotting
+figure;
+plot(time, x_ode45);
+hold on;
+plot(time_RK4, x_RK4, 'r');
+%final point
+hold off;
+title('Lorenz system of equations solution for x(t) between ode45 & RK4 method');
+xlabel('time (s)');
+ylabel('x(t)');
+legend('ode45', 'RK4');
+grid on;
+
+figure;
+plot(time, y_ode45);
+hold on;
+plot(time_RK4, y_RK4, 'r');
+%final point
+hold off;
+title('Lorenz system of equations solution for y(t) between ode45 & RK4 method');
+xlabel('time (s)');
+ylabel('y(t)');
+legend('ode45', 'RK4');
+grid on;
+
+figure;
+plot(time, z_ode45);
+hold on;
+plot(time_RK4, z_RK4, 'r');
+%final point
+hold off;
+title('Lorenz system of equations solution for z(t) between ode45 & RK4 method');
+xlabel('time (s)');
+ylabel('z(t)');
+legend('ode45', 'RK4');
+grid on;
 
 
 %plotting
@@ -48,9 +87,9 @@ hold on;
 plot3(x_RK4, y_RK4, z_RK4, 'r');
 %final point
 hold off;
-title('Three dimensional trajectory plot comparsion between ode45 & RK4 method');
+title('Three dimensional trajectory plot comparsion between ode45 & RK4');
 xlabel('x(t)');
 ylabel('y(t)');
 zlabel('z(t)');
-legend('ode45', 'RK4');
+
 grid on;

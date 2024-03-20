@@ -8,9 +8,7 @@ sigma = 10;
 rho = 28;
 beta = 8/3;
 
-
 time_steps = 0:delta_t:t_max;
-
 
 %ode solver, producing x,y,z values for the system
 
