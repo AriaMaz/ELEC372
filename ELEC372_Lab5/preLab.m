@@ -1,6 +1,6 @@
 % Define the range for x and y
-x = linspace(-4, 4, 400);
-y = linspace(-4, 4, 400);
+x = linspace(-4, 4, 150);
+y = linspace(-4, 4, 150);
 
 % Create a meshgrid for x and y
 [X, Y] = meshgrid(x, y);
