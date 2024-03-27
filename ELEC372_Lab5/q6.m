@@ -5,11 +5,10 @@ function gradient_descent_minimization
     
     % Set the step sizes
     alpha = 0.01; % Step size for gradient descent
-    delta = 1e-5; % Step size for central difference formula
+    delta = 0.001; % Step size for central difference formula
 
     % Set convergence tolerance and maximum number of iterations
     tolerance = 1e-6;
-    max_iterations = 1000;
 
     % Initialize variables
     x = x0;
@@ -17,7 +16,7 @@ function gradient_descent_minimization
     iteration = 0;
 
     % Gradient descent loop
-    while iteration < max_iterations
+    while true
         iteration = iteration + 1;
         
         % Numerically approximate gradient using central difference
@@ -29,7 +28,7 @@ function gradient_descent_minimization
         y_new = y - alpha * grad_y;
 
         % Check for convergence
-        if norm([x_new - x, y_new - y]) < tolerance
+        if (norm([x_new - x, y_new - y]) < tolerance)
             fprintf('Converged to minimum at (%.6f, %.6f) with function value %.6f\n', ...
                     x_new, y_new, f(x_new, y_new));
             break;
@@ -43,13 +42,7 @@ function gradient_descent_minimization
         fprintf('Iteration %d: x = %.6f, y = %.6f, f(x, y) = %.6f\n', ...
                 iteration, x, y, f(x, y));
     end
-
-    % Check if the maximum number of iterations was reached
-    if iteration == max_iterations
-        fprintf('Maximum iterations reached without convergence.\n');
-    end
 end
-
 % Function definition
 function value = f(x, y)
     value = (x^5 - y^3 - 2*x^2*y^2) * exp(-(x^2 + y^2));
