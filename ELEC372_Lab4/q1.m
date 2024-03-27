@@ -1,4 +1,4 @@
-function goldensectionsearch
+afunction goldensectionsearch
     % define function
     f = @(x) 2*sin(x) - x.^2/30;
 
