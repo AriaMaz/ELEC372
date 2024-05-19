@@ -16,6 +16,7 @@ function [A, b] = mappNETLIST(filename)
         if n1 > 0
             maxNode = max(maxNode, n1);
         end
+        
         if n2 > 0
             maxNode = max(maxNode, n2);
         end
