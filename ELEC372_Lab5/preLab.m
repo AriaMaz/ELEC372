@@ -5,7 +5,7 @@ y = linspace(-4, 4, 150);
 % Create a meshgrid for x and y
 [X, Y] = meshgrid(x, y);
 
-% Define the function f(x, y)
+% Define the function f(x, y) 
 F = X .* Y .* exp(- (X.^2 + Y.^2));
 
 % Create the 3D plot
